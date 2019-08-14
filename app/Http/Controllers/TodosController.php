@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Todo;
+
 
 class TodosController extends Controller
 {
@@ -35,7 +37,9 @@ class TodosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+
+
+public function store(Request $request)
     {
             //validation rules
     $rules = [
@@ -66,7 +70,10 @@ class TodosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+
+
+
+public function show($id)
     {
         $todo = Todo::findOrFail($id);
         return view('todos.show',[
@@ -80,10 +87,15 @@ class TodosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+
+
+
+public function edit($id)
     {
         //
     }
+
+
 
     /**
      * Update the specified resource in storage.
@@ -92,7 +104,9 @@ class TodosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+
+
+public function update(Request $request, $id)
     {
   //validation rules
   $rules = [
@@ -124,7 +138,9 @@ return redirect()
      * @return \Illuminate\Http\Response
      */
 
-    public function destroy($id)
+
+
+public function destroy($id)
     {
             //Delete the Todo
     $todo = Todo::findOrFail($id);
